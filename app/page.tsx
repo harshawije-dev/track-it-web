@@ -1,95 +1,59 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { Input } from "@/components/ui/input";
+import { LayoutPanelLeft, Package, Tag } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main className="flex flex-col w-full">
+      <div className="flex flex-row gap-3">
+        <aside className="h-screen w-64 bg-white border-r border-slate-300 flex flex-col justify-between items-start px-3 fixed left-1">
+          <div className="flex flex-col gap-3 items-center pt-5">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
+              alt="logo"
+              src={"/logo-sample.jpg"}
               width={100}
-              height={24}
-              priority
+              height={100}
             />
-          </a>
+            <Input type="search" className="my-5" />
+          </div>
+          <div className="flex-1 w-full flex flex-col">
+            <label htmlFor="menu" className="text-label">
+              menu
+            </label>
+            <article className="article-block">
+              <LayoutPanelLeft size={20} color="#64748b" />
+              <p className="text-sidebar">dashboard</p>
+            </article>
+            <article className="article-block">
+              <Package size={20} color="#64748b" />
+              <p className="text-sidebar">inventory</p>
+            </article>
+            <article className="article-block">
+              <Tag size={20} color="#64748b" />
+              <p className="text-sidebar">ticket</p>
+            </article>
+            {/* inventory - collapse */}
+            {/* tickets */}
+            {/* history */}
+            {/* stats */}
+            {/* chats */}
+            <label htmlFor="settings" className="text-label">
+              settings
+            </label>
+            {/* settings */}
+          </div>
+          <div>
+            {/* theme toggle */}
+            {/* profile */}
+          </div>
+        </aside>
+        <div className="flex-grow flex flex-col w-full p-3">
+          <nav className="w-full flex justify-end items-center">
+            {/* Notification */}
+          </nav>
+          <div></div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
